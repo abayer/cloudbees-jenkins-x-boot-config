@@ -10,8 +10,6 @@ user: "{{ .Parameters.pipelineUser.github.username }}"
 
 buildnum:
   enabled: false
-pipelinerunner:
-  enabled: "true"
 tillerNamespace: ""
 
 sinker:
@@ -19,6 +17,7 @@ sinker:
 
 # override the pipelinerunner image
 pipelinerunner:
+  enabled: "true"
   image:
     repository: gcr.io/jenkinsxio/builder-maven
     tag: 0.0.0-SNAPSHOT-PR-4819-5
