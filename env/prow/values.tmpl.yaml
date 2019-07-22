@@ -16,3 +16,14 @@ tillerNamespace: ""
 
 sinker:
   replicaCount: 0
+
+# override the pipelinerunner image
+pipelinerunner:
+  image:
+    repository: gcr.io/jenkinsxio/builder-maven
+    tag: 0.0.0-SNAPSHOT-PR-4819-5
+  env:
+    GIT_AUTHOR_NAME: "jenkins-x-bot"
+    GIT_AUTHOR_EMAIL: "jenkins-x@googlegroups.com"
+    XDG_CONFIG_HOME: "/home/jenkins"
+    MAVEN_OPTS: "-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn"
